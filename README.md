@@ -31,7 +31,7 @@ You can start your first spider with:
 ```
 
 - 프로젝트를 설치한 경로를 따라 들어가면 Scrapy의 구조를 확인할 수 있다.
-![structure](./image/structure.png)
+![structure](./image/structure.png){: width="200" height="200"}
 
 - spiders 폴더 아래에 있는 `.py` 파일들은 무엇일까? 
 
@@ -39,7 +39,8 @@ You can start your first spider with:
 -  데이터를 크롤링 할 때 해당 데이터를 클래스(class) 형태로 만든다.
 - 뉴스 기사의 경우 기사의 제목(title), 내용(content), 해당기사의 링크(link)의 세 가지 항목을 가져오고 싶을 때, `items.py`에 **scrapy.Field()** 로 정의해주면 된다.
 
-2) ``
+2) `middlewares.py`
+- engine에서 다른 모듈로 request와 response 정보가 교환될 때 지나가는 중간 통로
 
 3) `pipelines.py`
 - 크롤링해 온 데이터를 처리해줄 때 사용
