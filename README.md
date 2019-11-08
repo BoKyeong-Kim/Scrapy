@@ -31,7 +31,10 @@ You can start your first spider with:
 ```
 
 - 프로젝트를 설치한 경로를 따라 들어가면 Scrapy의 구조를 확인할 수 있다.
-<img src="./image/structure.png" width="100px" height="100px" alt="structure"></img>
+
+
+<img src="./image/structure.png" width="100px" height="200px" alt="structure"></img>
+
 
 - spiders 폴더 아래에 있는 `.py` 파일들은 무엇일까? 
 
