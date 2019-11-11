@@ -33,7 +33,7 @@ You can start your first spider with:
 - 프로젝트를 설치한 경로를 따라 들어가면 Scrapy의 구조를 확인할 수 있다.
 
 
-<img src="./image/structure.png" width="100px" height="200px" alt="structure"></img>
+<img src="./image/structure.png" width="180px" height="200px" alt="structure"></img>
 
 
 - spiders 폴더 아래에 있는 `.py` 파일들은 무엇일까? 
@@ -49,7 +49,26 @@ You can start your first spider with:
 - 크롤링해 온 데이터를 처리해줄 때 사용
 - 중복체크, 필터링, 데이터베이스 입력 후 처리해주려는 목적
 
-
 4) `settings.py`
 - 프로젝트 모듈간 연결 및 설정을 정의해주는 파일
+
+## Scrapy Selectors
+- Scrapy Selectors라고 불리는 XPath 또는 CSS에 기반한 메커니즘을 사용한다.
+
+- XPath와 CSS로 작업하기 위해, Scrapy는 Selector 클래스를 제공하고 response로부터 무엇을 선택할 것인지에 대한 편리한 단축키를 제공한다.
+
+- Xpath 간단한 예시
+    - /html/head/title : HTML문서의 <head>요소를 선택
+    - /html/head/title/text() : 앞에서 언급한 <title> 내부의 텍스트를 선택
+    - //td : 모든 <td> 요소 선택
+    - //div[@class='name'] : class='name' 속성을 포함한 모든 div 요소를 선택
+(Scrapy로 크롤링을 하면서 더 자세한 문법을 다룰 예정!)
+
+- Selectors는 4가지 기본 메서드를 가지고 있디.
+    - xpath() : 인수로 주어진 XPath에서 선택된 각 노드를 대표하는 selectors 리스트를 돌려준다.
+    - css() : 인수로 주어진 CSS에서 각 선택된 각 노드를 대표하는  selectprs 리스트를 돌려준다.
+    - extract() : 선택된 데이터와 함께 유니코드 string을 돌려준다.
+    - re() : 인수로 주어진 정규표현식을 적용해서 추출한 유니코드 string을 돌려준다.
+
+
 
