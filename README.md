@@ -58,10 +58,10 @@ You can start your first spider with:
 - XPath와 CSS로 작업하기 위해, Scrapy는 Selector 클래스를 제공하고 response로부터 무엇을 선택할 것인지에 대한 편리한 단축키를 제공한다.
 
 - Xpath 간단한 예시
-    - /html/head/title : HTML문서의 <head>요소를 선택
-    - /html/head/title/text() : 앞에서 언급한 <title> 내부의 텍스트를 선택
-    - //td : 모든 <td> 요소 선택
-    - //div[@class='name'] : class='name' 속성을 포함한 모든 div 요소를 선택
+    - `/html/head/title` : HTML문서의 `<head>`요소를 선택
+    - `/html/head/title/text()` : 앞에서 언급한 `<title>`내부의 텍스트를 선택
+    - `//td` : 모든 `<td>` 요소 선택
+    - `//div[@class='name']` : `class='name'` 속성을 포함한 모든 `div` 요소를 선택
 (Scrapy로 크롤링을 하면서 더 자세한 문법을 다룰 예정!)
 
 - Selectors는 4가지 기본 메서드를 가지고 있디.
@@ -69,6 +69,30 @@ You can start your first spider with:
     - css() : 인수로 주어진 CSS에서 각 선택된 각 노드를 대표하는  selectprs 리스트를 돌려준다.
     - extract() : 선택된 데이터와 함께 유니코드 string을 돌려준다.
     - re() : 인수로 주어진 정규표현식을 적용해서 추출한 유니코드 string을 돌려준다.
+    
+    ## items.py 수정하기
+    - `items.py` 를 열고 가져올 필드를 미리 선언해준다.
+```python
+    # -*- coding: utf-8 -*-
+
+    # Define here the models for your scraped items
+    #
+    # See documentation in:
+    # https://docs.scrapy.org/en/latest/topics/items.html
+
+    import scrapy
+    from scrapy.item import Item, Field
+
+
+    class NewsbotItem(scrapy.Item):
+        company = scrapy.Field()
+        date = scrapy.Field()
+        titles= scrapy.Field()
+        content = scrapy.Field()
+        film_url = scrapy.Field()
+```
+- 뉴스 기사를 크롤링 할 것이기 때문에 어느 회사의 기사인지(company), 날짜(date), 기사 제목(titles), 기사 내용(content), 기사의 URL(film_url)을 선언해준다.
+    
 
 
 
