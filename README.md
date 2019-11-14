@@ -132,7 +132,7 @@ class NewsPipeline(object):
 ## Settings.py 수정
 - 프로젝트에 사용할 모델을 정의해주고 파이프라인을 지정해준다.
 - 중요한 것은 `NewsItem`을 지정해 주는 것이다.
-```
+```python
 # -*- coding: utf-8 -*-
 .
 .
@@ -187,7 +187,7 @@ class NewstartSpider(scrapy.Spider):
 
 ### 기사의 URL 추출
 - xpath로 기사의 주소를 추출하여 urls에 저장한다.
-- :eyes: 더 자세한 사항은 [Scrapy at a glance](https://doc.scrapy.org/en/xpath-tutorial/topics/xpath-tutorial.html
+- :eyes: 더 자세한 사항은 [XPath Tutorial](https://doc.scrapy.org/en/xpath-tutorial/topics/xpath-tutorial.html
 ) 참고!
 
 - class가 "list-block"인 div의 아래에  class가 "list-titles"인 div의 아래에 @href와 list-titles를 포함하는 @href코드를 추출한다.
@@ -232,8 +232,4 @@ def parse_details(self, response):
 - 그럼 아래와 같이 `info_news.csv` 파일이 생성된 것을 확인할 수 있다.
 <img src="./image/info_news.png" alt="info_news"></img>
 
-
-
-
-
-
+크롤링 봇 완성!
